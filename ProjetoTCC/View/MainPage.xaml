@@ -13,10 +13,11 @@
             VerticalOptions="Center">
 
             <Image
+                x:Name="image"
                 Source="logo.jpg"
                 SemanticProperties.Description="Cute dot net bot waving hi to you!"
                 HeightRequest="200"
-                HorizontalOptions="Center" />
+                HorizontalOptions="Center"/>
 
             <Label
                 Text="Portal do Aluno"
@@ -38,6 +39,12 @@
                 HorizontalOptions="Center" />
 
             <Button 
+                Text="Eventos"
+                FontAttributes="Bold"
+                Clicked="Button_Clicked"
+                HorizontalOptions="Center" />
+            
+            <Button 
                 Text="Navigate"
                 FontAttributes="Bold"
                 Command="{Binding NavigateCommand}"
@@ -47,6 +54,12 @@
                 Text="Check Internet"
                 FontAttributes="Bold"
                 Command="{Binding CheckInternetCommand}"
+                HorizontalOptions="Center" />
+
+            <Button 
+                Text="Alunos"
+                FontAttributes="Bold"
+                Clicked="BtnAlunos_Clicked"
                 HorizontalOptions="Center" />
 
         </VerticalStackLayout>

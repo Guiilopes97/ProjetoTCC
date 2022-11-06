@@ -17,6 +17,7 @@ public partial class MainViewModel : ObservableObject
 
     [ObservableProperty]
     int count;
+    
 
     [RelayCommand]
     void IncrementCount()
