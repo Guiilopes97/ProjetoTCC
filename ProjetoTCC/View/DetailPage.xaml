@@ -2,12 +2,11 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewmodel="clr-namespace:ProjetoTCC.ViewModel"
+             xmlns:android="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.AndroidSpecific;assembly=Microsoft.Maui.Controls"
              x:DataType="viewmodel:DetailViewModel"
              x:Class="ProjetoTCC.DetailPage"
              Title="DetailPage">
 
 
-    <WebView Source="https://portalaluno.unisanta.br/"/>
-    
-    
+    <WebView android:WebView.MixedContentMode="AlwaysAllow" Source="https://portalaluno.unisanta.br/"/>
 </ContentPage>
