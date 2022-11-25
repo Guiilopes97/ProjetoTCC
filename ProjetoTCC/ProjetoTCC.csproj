@@ -50,9 +50,13 @@
 
 	<ItemGroup>
 	  <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0" />
+	  <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="View\CovidPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="View\DetailPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

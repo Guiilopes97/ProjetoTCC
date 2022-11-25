@@ -45,6 +45,21 @@ public partial class MainViewModel : ObservableObject
     }
 
     [RelayCommand]
+    async Task NavigateCovid()
+    {
+        NetworkAccess accessType = connectivity.NetworkAccess;
+
+        if (accessType == NetworkAccess.Internet)
+        {
+            await Shell.Current.GoToAsync(nameof(CovidPage));
+        }
+        else
+        {
+            await Shell.Current.DisplayAlert("Conexão", "Sem Conexão a Internet", "ok");
+        }
+    }
+
+    [RelayCommand]
     async Task CheckInternet()
     {
         NetworkAccess accessType = connectivity.NetworkAccess;

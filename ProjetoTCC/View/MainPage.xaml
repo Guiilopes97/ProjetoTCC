@@ -1,66 +1,73 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:viewmodel="clr-namespace:ProjetoTCC.ViewModel" 
-             x:Class="ProjetoTCC.MainPage"
-             x:DataType="viewmodel:MainViewModel"
-             BackgroundImageSource="background.jpg">
+<ContentPage
+    x:Class="ProjetoTCC.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:viewmodel="clr-namespace:ProjetoTCC.ViewModel"
+    x:DataType="viewmodel:MainViewModel"
+    BackgroundImageSource="background.jpg">
 
     <ScrollView>
         <VerticalStackLayout
-            Spacing="25"
             Padding="30,0"
+            Spacing="25"
             VerticalOptions="Center">
 
             <Image
                 x:Name="image"
-                Source="logo.jpg"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
                 HeightRequest="200"
-                HorizontalOptions="Center"/>
+                HorizontalOptions="Center"
+                SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                Source="logo.jpg" />
 
             <Label
-                Text="Portal do Aluno"
-                SemanticProperties.HeadingLevel="Level1"
                 FontSize="32"
-                HorizontalOptions="Center" />
+                HorizontalOptions="Center"
+                SemanticProperties.HeadingLevel="Level1"
+                Text="Portal do Aluno" />
 
-            <Label 
-                Text="{Binding Count, StringFormat='Contador Atual: {0}'}"
+            <Label
+                FontAttributes="Bold"
                 FontSize="18"
-                FontAttributes="Bold"
-                HorizontalOptions="Center" />
+                HorizontalOptions="Center"
+                Text="{Binding Count, StringFormat='Contador Atual: {0}'}" />
 
-            <Button 
-                Text="Click me"
-                FontAttributes="Bold"
-                SemanticProperties.Hint="Counts the number of times you click"
+            <Button
                 Command="{Binding IncrementCountCommand}"
-                HorizontalOptions="Center" />
-
-            <Button 
-                Text="Eventos"
                 FontAttributes="Bold"
+                HorizontalOptions="Center"
+                SemanticProperties.Hint="Counts the number of times you click"
+                Text="Click me" />
+
+            <Button
                 Clicked="Button_Clicked"
-                HorizontalOptions="Center" />
-            
-            <Button 
-                Text="Navigate"
                 FontAttributes="Bold"
+                HorizontalOptions="Center"
+                Text="Eventos" />
+
+            <Button
                 Command="{Binding NavigateCommand}"
-                HorizontalOptions="Center" />
-
-            <Button 
-                Text="Check Internet"
                 FontAttributes="Bold"
+                HorizontalOptions="Center"
+                Text="Navigate" />
+
+            <Button
+                Command="{Binding NavigateCovidCommand}"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                Text="Casos Covid" />
+
+            <Button
                 Command="{Binding CheckInternetCommand}"
-                HorizontalOptions="Center" />
-
-            <Button 
-                Text="Alunos"
                 FontAttributes="Bold"
+                HorizontalOptions="Center"
+                Text="Check Internet" />
+
+            <Button
                 Clicked="BtnAlunos_Clicked"
-                HorizontalOptions="Center" />
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                Text="Alunos" />
 
         </VerticalStackLayout>
     </ScrollView>

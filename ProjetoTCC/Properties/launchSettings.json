@@ -3,6 +3,15 @@
     "Windows Machine": {
       "commandName": "MsixPackage",
       "nativeDebugging": false
+    },
+    "http": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": true,
+      "applicationUrl": "https://covid19-brazil-api.now.sh/api/report/v1/brazil",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
     }
   }
 }

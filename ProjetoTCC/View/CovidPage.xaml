@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ProjetoTCC.CovidPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:__XamlGeneratedCode__"
+    xmlns:viewmodel="clr-namespace:ProjetoTCC.ViewModel"
+    Title="DashBoard Covid"
+    x:DataType="viewmodel:CovidViewModel"
+    BackgroundColor="{DynamicResource White}"
+    Shell.NavBarIsVisible="False">
+
+
+    <Grid VerticalOptions="FillAndExpand">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Image
+            Aspect="Fill"
+            HeightRequest="350"
+            Source="overlay.png"
+            VerticalOptions="StartAndExpand" />
+
+        <StackLayout
+            Margin="0,20"
+            HorizontalOptions="Center"
+            Orientation="Vertical"
+            VerticalOptions="Center">
+            <StackLayout HorizontalOptions="Center" Orientation="Vertical">
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="50"
+                    Text="Covid 19 - Brasil"
+                    VerticalOptions="Center" />
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="15"
+                    HorizontalTextAlignment="Center"
+                    Text="Registros de casos e mortes"
+                    VerticalOptions="Center" />
+            </StackLayout>
+        </StackLayout>
+
+        <Frame
+            Grid.Row="1"
+            Margin="20,-40,20,0"
+            Padding="0"
+            BackgroundColor="White"
+            BorderColor="White"
+            CornerRadius="10"
+            HasShadow="True"
+            HeightRequest="150"
+            VerticalOptions="Start">
+
+            <Grid
+                Margin="0,35,0,0"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="CenterAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <StackLayout
+                    HorizontalOptions="CenterAndExpand"
+                    Orientation="Vertical"
+                    Spacing="10">
+                    <Image Source="chart.png" WidthRequest="50" />
+                    <StackLayout HorizontalOptions="CenterAndExpand" Spacing="7">
+                        <Label
+                            FontAttributes="Bold"
+                            FontSize="14"
+                            HorizontalOptions="Center"
+                            Text="{Binding covid.confirmed}"
+                            TextColor="Black" />
+                        <Label
+                            FontSize="11"
+                            HorizontalOptions="Center"
+                            Text="Confirmados"
+                            TextColor="#7D7D7D" />
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout
+                    Grid.Column="1"
+                    HorizontalOptions="CenterAndExpand"
+                    Orientation="Vertical"
+                    Spacing="10">
+                    <Image Source="radiation.png" WidthRequest="50" />
+                    <StackLayout HorizontalOptions="CenterAndExpand" Spacing="7">
+                        <Label
+                            FontAttributes="Bold"
+                            FontSize="14"
+                            HorizontalOptions="Center"
+                            Text="{Binding covid.deaths}"
+                            TextColor="Black" />
+                        <Label
+                            FontSize="11"
+                            HorizontalOptions="Center"
+                            Text="Mortes"
+                            TextColor="#7D7D7D" />
+                    </StackLayout>
+                </StackLayout>
+            </Grid>
+        </Frame>
+    </Grid>
+</ContentPage>
